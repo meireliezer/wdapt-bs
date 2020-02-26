@@ -10,7 +10,9 @@ import { AppRouterModule } from './router/app-router.module';
 import { FavoritesComponent } from './favorites/favorites/favorites.component';
 import { FavoritesGridComponent } from './favorites/favorites-grid/favorites-grid.component';
 import { FavoritesTilesComponent } from './favorites/favorites-tiles/favorites-tiles.component';
-import { ActionBtnsComponent } from './share/action-btns/action-btns.component'
+import { ActionBtnsComponent } from './share/action-btns/action-btns.component';
+import { AddFavoritesComponent } from './favorites/add-favorites/add-favorites.component';
+import { RemoveFavoritesComponent } from './favorites/remove-favorites/remove-favorites.component'
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { ActionBtnsComponent } from './share/action-btns/action-btns.component'
     FavoritesComponent,
     FavoritesGridComponent,
     FavoritesTilesComponent,
-    ActionBtnsComponent
+    ActionBtnsComponent,
+    AddFavoritesComponent,
+    RemoveFavoritesComponent
   ],
   imports: [
     BrowserModule,

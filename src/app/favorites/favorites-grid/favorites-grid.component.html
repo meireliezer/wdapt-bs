@@ -4,6 +4,7 @@
         <th scope="col" class="text-uppercase">id</th>
         <th scope="col" class="text-uppercase">Website name</th>
         <th scope="col" class="text-uppercase">Url</th>
+        <th scope="col" class="text-uppercase"></th>
       </tr>
     </thead>
     <tbody>
@@ -11,6 +12,7 @@
         <td>{{item.id}}</td>
         <td>{{item.websiteName}}</td>
         <td>{{item.url}}</td>
+        <td><app-action-btns [favorite]="item" ></app-action-btns></td>
       </tr>
     </tbody>
   </table>
