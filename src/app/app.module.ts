@@ -5,17 +5,24 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ActionsLogComponent } from './actions-log/actions-log.component';
+import { HomeComponent } from './home/home/home.component';
+import { AppRouterModule } from './router/app-router.module';
+import { FavoritesComponent } from './favorites/favorites/favorites.component'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ActionsLogComponent
+    ActionsLogComponent,
+    HomeComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-secondary navbar-expand-sm ">
     <!-- As a link -->
-    <a class="navbar-brand text-uppercase h1" href="#">Wdap-bootstrap</a>
+    <a class="navbar-brand text-uppercase h1" routerLink="/home">Wdap-bootstrap</a>
     <!-- collaps state in small screen -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,10 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Favorites <span class="sr-only">(current)</span></a>
+                <a class="nav-link" routerLink="/favorites" routerLinkActive="active">Favorites <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Actions Log</a>
+                <a class="nav-link" routerLink="/actions-log" routerLinkActive="active">Actions Log</a>
             </li>
         </ul>
     </div>
