@@ -1,3 +1,23 @@
-<div *ngFor="let item of getActionsLog(); index as i">
-    <div>{{i}}#: {{item|json}}</div>
+
+<div class="container-fluid">
+    <div  class="text-capitalize my-4 font-weight-bold">Actions Log</div>
+    <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col" class="text-uppercase">Action</th>
+            <th scope="col" class="text-uppercase">Website name</th>
+            <th scope="col" class="text-uppercase">Url</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr scope="rows" *ngFor="let item of getActionsLog(); index as i">
+            
+            <td>{{item.action}}</td>
+            <td>{{item.websiteName}}</td>
+            <td>{{item.url}}</td>
+          </tr>
+        </tbody>
+      </table>
 </div>
+
+
