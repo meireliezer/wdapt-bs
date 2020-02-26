@@ -12,7 +12,8 @@ import { FavoritesGridComponent } from './favorites/favorites-grid/favorites-gri
 import { FavoritesTilesComponent } from './favorites/favorites-tiles/favorites-tiles.component';
 import { ActionBtnsComponent } from './share/action-btns/action-btns.component';
 import { AddFavoritesComponent } from './favorites/add-favorites/add-favorites.component';
-import { RemoveFavoritesComponent } from './favorites/remove-favorites/remove-favorites.component'
+import { RemoveFavoritesComponent } from './favorites/remove-favorites/remove-favorites.component';
+import { HoverSpyDirective } from './share/action-btns/hover-spy.directive'
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { RemoveFavoritesComponent } from './favorites/remove-favorites/remove-fa
     FavoritesTilesComponent,
     ActionBtnsComponent,
     AddFavoritesComponent,
-    RemoveFavoritesComponent
+    RemoveFavoritesComponent,
+    HoverSpyDirective
   ],
   imports: [
     BrowserModule,
