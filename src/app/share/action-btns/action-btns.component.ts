@@ -18,7 +18,7 @@ export class ActionBtnsComponent implements OnInit, AfterViewInit {
 
   @HostListener('mouseenter', ['$event'])
   private onMouseEnter(event){
-    console.log(`mouseenter : ${this.favorite.websiteName}`);
+
     
     this.rederer.removeClass(this.el.nativeElement.children[0], 'invisible');
   }
@@ -36,7 +36,6 @@ export class ActionBtnsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log('favorite:', this.favorite);
-    console.log('el:', this.el);
+
   }
 }

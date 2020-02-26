@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { faPlus, faTable, faList } from '@fortawesome/free-solid-svg-icons';
+import { ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-favorites',
@@ -7,7 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritesComponent implements OnInit {
 
-  constructor() { }
+  public faPlus = faPlus;
+  public faList = faList;
+  public faTable = faTable
+  
+  public get  isGridView()  {
+    return this._isGridView;
+  }
+  
+  
+  private _isGridView;
+
+  
+
+  constructor(private activatedRoute:ActivatedRoute) {
+    this.activatedRoute.url.subscribe( () =>  {
+      this._isGridView = window.location.href.indexOf('grid') !== -1;
+    });
+
+  }
+
+
 
   ngOnInit() {
   }

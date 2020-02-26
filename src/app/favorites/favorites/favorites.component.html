@@ -1,5 +1,8 @@
 
 <div class="container-fluid">
     <div  class="text-capitalize my-4 font-weight-bold">Favorites</div>
+    <a href="#" class="btn btn-primary"><fa-icon [icon]="faPlus"></fa-icon></a>  
+    <a *ngIf="isGridView" routerLink="/favorites/tiles"  class="btn btn-primary"><fa-icon [icon]="faTable "></fa-icon></a>  
+    <a *ngIf="!isGridView" routerLink="/favorites/grid" class="btn btn-primary"><fa-icon [icon]="faList"></fa-icon></a>  
     <router-outlet></router-outlet>
 </div>
