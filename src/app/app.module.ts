@@ -7,7 +7,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ActionsLogComponent } from './actions-log/actions-log.component';
 import { HomeComponent } from './home/home/home.component';
 import { AppRouterModule } from './router/app-router.module';
-import { FavoritesComponent } from './favorites/favorites/favorites.component'
+import { FavoritesComponent } from './favorites/favorites/favorites.component';
+import { FavoritesGridComponent } from './favorites/favorites-grid/favorites-grid.component';
+import { FavoritesTilesComponent } from './favorites/favorites-tiles/favorites-tiles.component'
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { FavoritesComponent } from './favorites/favorites/favorites.component'
     FooterComponent,
     ActionsLogComponent,
     HomeComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    FavoritesGridComponent,
+    FavoritesTilesComponent
   ],
   imports: [
     BrowserModule,

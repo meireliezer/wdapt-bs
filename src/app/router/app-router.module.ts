@@ -4,6 +4,8 @@ import {Route, RouterModule, Routes} from "@angular/router"
 import { ActionsLogComponent } from '../actions-log/actions-log.component';
 import { HomeComponent } from '../home/home/home.component';
 import { FavoritesComponent } from '../favorites/favorites/favorites.component';
+import { FavoritesGridComponent } from '../favorites/favorites-grid/favorites-grid.component';
+import { FavoritesTilesComponent } from '../favorites/favorites-tiles/favorites-tiles.component';
 
 
 const appRoutes: Routes = [
@@ -17,7 +19,22 @@ const appRoutes: Routes = [
   },
   {
     path: 'favorites',
-    component: FavoritesComponent
+    component: FavoritesComponent,
+    children: [
+      {
+        path:'grid',
+        component: FavoritesGridComponent
+      },
+      {
+        path:'tiles',
+        component: FavoritesTilesComponent
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '/favorites/grid'
+      }
+    ]
 },
   {
     path: '',
