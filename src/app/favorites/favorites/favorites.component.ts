@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faPlus, faTable, faList } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faTable, faList, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -14,6 +14,7 @@ export class FavoritesComponent implements OnInit {
   public faPlus = faPlus;
   public faList = faList;
   public faTable = faTable
+  public faSearch = faSearch;
   
   public get  isGridView()  {
     return this._isGridView;

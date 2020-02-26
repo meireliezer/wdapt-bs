@@ -1,8 +1,16 @@
 
 <div class="container-fluid">
-    <div  class="text-capitalize my-4 font-weight-bold">Favorites</div>
-    <a href="#" class="btn btn-primary"><fa-icon [icon]="faPlus"></fa-icon></a>  
-    <a *ngIf="isGridView" routerLink="/favorites/tiles"  class="btn btn-primary"><fa-icon [icon]="faTable "></fa-icon></a>  
-    <a *ngIf="!isGridView" routerLink="/favorites/grid" class="btn btn-primary"><fa-icon [icon]="faList"></fa-icon></a>  
+    <div class="header d-flex my-4">
+        <div  class="text-capitalize  font-weight-bold">Favorites</div>
+        <div class="ml-auto d-flex">            
+            <div class="search">
+                <fa-icon [icon]="faSearch"></fa-icon>
+                <input type="text"/>
+            </div>
+            <a href="#" class="btn border rounded mr-1"><fa-icon [icon]="faPlus"></fa-icon></a>  
+            <a *ngIf="isGridView" routerLink="/favorites/tiles" class="btn border rounded"><fa-icon [icon]="faTable "></fa-icon></a>  
+            <a *ngIf="!isGridView" routerLink="/favorites/grid" class="btn border rounded"><fa-icon [icon]="faList"></fa-icon></a>      
+        </div>    
+    </div>
     <router-outlet></router-outlet>
 </div>
