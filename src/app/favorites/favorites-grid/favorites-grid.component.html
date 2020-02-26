@@ -1,15 +1,14 @@
 <table class="table table-striped table-hover">
     <thead>
       <tr>
-        <th scope="col" class="text-uppercase">Action</th>
+        <th scope="col" class="text-uppercase">id</th>
         <th scope="col" class="text-uppercase">Website name</th>
         <th scope="col" class="text-uppercase">Url</th>
       </tr>
     </thead>
     <tbody>
-      <tr scope="rows" *ngFor="let item of [{action:1, websiteName:2, url:3}]; index as i">
-        
-        <td>{{item.action}}</td>
+      <tr scope="rows" *ngFor="let item of getList()">        
+        <td>{{item.id}}</td>
         <td>{{item.websiteName}}</td>
         <td>{{item.url}}</td>
       </tr>
