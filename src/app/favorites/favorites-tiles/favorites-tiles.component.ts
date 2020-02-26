@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FavoritesService } from 'src/app/common/favorites/favorites.service';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-favorites-tiles',
@@ -7,7 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritesTilesComponent implements OnInit {
 
-  constructor() { }
+  public faEdit = faEdit;
+  public faTrash = faTrash;
+
+  public getList() {
+    return  this.favoritesService.getList();
+  }
+  
+  constructor(private favoritesService: FavoritesService) { 
+
+  }
+
 
   ngOnInit() {
   }

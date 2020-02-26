@@ -1,1 +1,15 @@
-<p>favorites-tiles works!</p>
+<div class="row row-cols-1 row-cols-xl-6 row-cols-lg-5  row-cols-md-4  row-cols-sm-3 row-cols-xs-2">
+    <div class="col mb-4"  *ngFor="let item of getList()">
+        <div class="card  mx-auto text-center">
+            <img src="https://source.unsplash.com/random/50x50" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">{{item.websiteName}}</h5>
+              <p class="card-text">{{item.url}}</p>
+              <div class="d-flex justify-content-end">
+                <a href="#" class="btn btn-primary"><fa-icon [icon]="faEdit"></fa-icon></a>
+                <a href="#" class="btn btn-primary"><fa-icon [icon]="faTrash"></fa-icon></a>  
+              </div>
+            </div>
+          </div>    
+    </div>
+</div>

@@ -23,7 +23,31 @@ export class FavoritesService {
       url: 'http://cnn.com',
       img: ''
     });
-    this.nextId();
+    this._favoritesList.push({
+      id: this.nextId(),
+      websiteName: 'Ynet',
+      url: 'http://yent.co.il',
+      img: ''
+    });
+    this._favoritesList.push({
+      id: this.nextId(),
+      websiteName: 'CNN',
+      url: 'http://cnn.com',
+      img: ''
+    });
+    this._favoritesList.push({
+      id: this.nextId(),
+      websiteName: 'Ynet',
+      url: 'http://yent.co.il',
+      img: ''
+    });
+    this._favoritesList.push({
+      id: this.nextId(),
+      websiteName: 'CNN',
+      url: 'http://cnn.com',
+      img: ''
+    });
+  
   }
 
   public getList(){
