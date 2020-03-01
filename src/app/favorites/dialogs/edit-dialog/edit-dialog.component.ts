@@ -24,5 +24,8 @@ export class EditDialogComponent {
     this.activeModal.dismiss();
   }
 
-
+  public printIt(item) {
+    console.log('item', item);
+    return 'ok'
+  }
 }

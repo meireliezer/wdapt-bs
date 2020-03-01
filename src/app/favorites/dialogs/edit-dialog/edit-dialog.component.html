@@ -11,22 +11,42 @@
             <input type="text" class="form-control" id="websitename" placeholder="website name"
             [(ngModel)]="favorite.websiteName"
             name="wbsiteNme"
-            required>
+            #name="ngModel"
+            required
+            [ngClass]="{'border border-danger': !name.valid}"            
+            >            
+            <div *ngIf="name?.errors?.required" class="text-danger">
+                Website Name is required.
+            </div>
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Url</label>
             <input type="url" class="form-control" id="url" placeholder="http://url"
             [(ngModel)]="favorite.url"
             name="url"
+            #url="ngModel"
             appUrlValidator
-            required>
+            required
+            [ngClass]="{'border border-danger': !url.valid}"
+            >
+            <div *ngIf="url?.errors?.appUrlValidator" class="text-danger">
+                {{url.errors.appUrlValidator}}
+            </div>
+            <div *ngIf="url?.errors?.required" class="text-danger">
+                Url is required.
+            </div>
+
         </div>
         
+        
     </form>
-    
+    <div>
+   
+    </div>
 </div>
 <div class="modal-footer">   
     <button type="button" class="btn btn-outline-dark" (click)="onCancel()">Cancel</button>
     <button type="button" class="btn btn-outline-dark" (click)="onSave()" 
     [disabled]="!f.valid">Save</button>
+    
 </div>
