@@ -30,6 +30,9 @@ export class ActionsLogService {
      this.addLog(ACTION_TYPE.REMOVE, websiteName, url);
    }
 
+   public edit (websiteName:string, url:string){
+    this.addLog(ACTION_TYPE. EDIT, websiteName, url);
+   }
 
    private addLog(actionType:string, websiteName:string, url:string) : IActionLog {
     let logItem: IActionLog = {

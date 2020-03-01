@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { RemoveDialogComponent } from 'src/app/fravorites/dialogs/remove-dialog/remove-dialog.component';
+import { RemoveDialogComponent } from 'src/app/favorites/dialogs/remove-dialog/remove-dialog.component';
 
 @Component({
   selector: 'app-home',

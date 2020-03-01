@@ -2,8 +2,10 @@ import { Component,  Input } from '@angular/core';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { IFavorite } from 'src/app/model/favorite.interface';
 import { NgbModalRef, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { RemoveDialogComponent } from 'src/app/fravorites/dialogs/remove-dialog/remove-dialog.component';
+import { RemoveDialogComponent } from 'src/app/favorites/dialogs/remove-dialog/remove-dialog.component';
 import { FavoritesService } from 'src/app/common/favorites/favorites.service';
+import { EditDialogComponent } from 'src/app/favorites/dialogs/edit-dialog/edit-dialog.component';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-action-btns',
@@ -35,6 +37,20 @@ export class ActionBtnsComponent  {
     }).catch( no => {
       console.log('dissmised');
     })
+  }
+
+  public edit(){
+    this.ngModalRef = this.modalService.open(EditDialogComponent);
+    this.ngModalRef.componentInstance.favorite = this.favorite;
+
+    // Convert Promise to observable
+    from(this.ngModalRef.result).subscribe(
+      (favorite) => {
+        this.favoritesService.edit(favorite);
+        //this.favorite = favorite;
+      }, 
+      _ => console.log('cancel edit')
+    );
   }
   
 }

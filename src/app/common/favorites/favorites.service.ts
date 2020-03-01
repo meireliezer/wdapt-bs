@@ -62,6 +62,14 @@ export class FavoritesService {
     this._favoritesList = this._favoritesList.filter( f => f !== item);
   }
 
+  public edit(favorite:IFavorite){
+    let item = this._favoritesList.find( item => item.id === favorite.id);
+    if( item ){
+      item = favorite;
+      this.actiosLogService.edit( favorite.websiteName, favorite.url) ;
+    }
+  }
+
   private  nextId(){
     let currentId = (this._nextId || 1) ;
     this._nextId = currentId + 1;

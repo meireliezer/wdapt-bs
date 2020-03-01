@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -12,8 +14,11 @@ import { FavoritesGridComponent } from './favorites/favorites-grid/favorites-gri
 import { FavoritesTilesComponent } from './favorites/favorites-tiles/favorites-tiles.component';
 import { ActionBtnsComponent } from './share/action-btns/action-btns.component';
 import { HoverSpyDirective } from './share/action-btns/hover-spy.directive';
-import { RemoveDialogComponent } from './fravorites/dialogs/remove-dialog/remove-dialog.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { RemoveDialogComponent } from './favorites/dialogs/remove-dialog/remove-dialog.component';
+import { AddDialogComponent } from './favorites/dialogs/add-dialog/add-dialog.component';
+import { EditDialogComponent } from './favorites/dialogs/edit-dialog/edit-dialog.component';
+import { FormsModule } from '@angular/forms';
+import { UrlValidatorDirective } from './share/form-validators/url-validator.directive';
 
 
 @NgModule({
@@ -28,16 +33,20 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     FavoritesTilesComponent,
     ActionBtnsComponent,
     HoverSpyDirective,
-    RemoveDialogComponent
+    RemoveDialogComponent,
+    AddDialogComponent,    
+    EditDialogComponent, 
+    UrlValidatorDirective
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
+    FormsModule,
     NgbModule,
     AppRouterModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[RemoveDialogComponent]
+  entryComponents:[RemoveDialogComponent, AddDialogComponent, EditDialogComponent]
 })
 export class AppModule { }
