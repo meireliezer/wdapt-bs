@@ -25,11 +25,7 @@
     </form>
     
 </div>
-<div class="modal-footer">
-    <div>form valid {{f.valid}}</div>
-    <div>form valid {{f.value | json}}</div>
-    
-   
+<div class="modal-footer">   
     <button type="button" class="btn btn-outline-dark" (click)="onCancel()">Cancel</button>
     <button type="button" class="btn btn-outline-dark" (click)="onSave()" 
     [disabled]="!f.valid">Save</button>
