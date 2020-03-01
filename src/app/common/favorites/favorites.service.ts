@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IFavorite } from 'src/app/model/favorite.interface';
+import { ActionsLogService } from '../actions-log/actions-log.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class FavoritesService {
   private _favoritesList: Array<IFavorite> = [];
   private _nextId = 1;
 
-  constructor() { 
+  constructor(private actiosLogService:ActionsLogService) { 
 
     this._favoritesList.push({
       id: this.nextId(),
@@ -54,6 +55,12 @@ export class FavoritesService {
     return this._favoritesList;
   }
 
+
+  public remove(id:number){
+    let item = this._favoritesList.find( item => item.id === id);
+    this.actiosLogService.remove(item.websiteName, item.url);
+    this._favoritesList = this._favoritesList.filter( f => f !== item);
+  }
 
   private  nextId(){
     let currentId = (this._nextId || 1) ;

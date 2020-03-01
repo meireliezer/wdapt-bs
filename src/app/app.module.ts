@@ -13,7 +13,9 @@ import { FavoritesTilesComponent } from './favorites/favorites-tiles/favorites-t
 import { ActionBtnsComponent } from './share/action-btns/action-btns.component';
 import { AddFavoritesComponent } from './favorites/add-favorites/add-favorites.component';
 import { RemoveFavoritesComponent } from './favorites/remove-favorites/remove-favorites.component';
-import { HoverSpyDirective } from './share/action-btns/hover-spy.directive'
+import { HoverSpyDirective } from './share/action-btns/hover-spy.directive';
+import { RemoveDialogComponent } from './fravorites/dialogs/remove-dialog/remove-dialog.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -29,14 +31,17 @@ import { HoverSpyDirective } from './share/action-btns/hover-spy.directive'
     ActionBtnsComponent,
     AddFavoritesComponent,
     RemoveFavoritesComponent,
-    HoverSpyDirective
+    HoverSpyDirective,
+    RemoveDialogComponent
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
+    NgbModule,
     AppRouterModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[RemoveDialogComponent]
 })
 export class AppModule { }

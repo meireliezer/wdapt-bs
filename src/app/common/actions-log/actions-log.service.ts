@@ -25,17 +25,24 @@ export class ActionsLogService {
      return this._actionsLog;
    }
 
-   public add(actionType:string, websiteName:string, url:string) : IActionLog {
-     let logItem: IActionLog = {
-        id: this._nextId,
-        action: actionType,
-        websiteName, 
-        url
-     }
-     ++this._nextId;
-     this._actionsLog.push(logItem);
-     return logItem;
+
+   public remove(websiteName:string, url:string){
+     this.addLog(ACTION_TYPE.REMOVE, websiteName, url);
    }
+
+
+   private addLog(actionType:string, websiteName:string, url:string) : IActionLog {
+    let logItem: IActionLog = {
+       id: this._nextId,
+       action: actionType,
+       websiteName, 
+       url
+    }
+    ++this._nextId;
+    this._actionsLog.push(logItem);
+    return logItem;
+  }
+
 
 
 
