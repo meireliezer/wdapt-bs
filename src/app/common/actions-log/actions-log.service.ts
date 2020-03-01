@@ -34,6 +34,10 @@ export class ActionsLogService {
     this.addLog(ACTION_TYPE. EDIT, websiteName, url);
    }
 
+   public add (websiteName:string, url:string){
+    this.addLog(ACTION_TYPE. ADD, websiteName, url);
+   }
+
    private addLog(actionType:string, websiteName:string, url:string) : IActionLog {
     let logItem: IActionLog = {
        id: this._nextId,

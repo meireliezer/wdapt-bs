@@ -1,1 +1,32 @@
-<p>add-dialog works!</p>
+<div class="modal-header">
+    <h4 class="modal-title">Add Faborite Website</h4>
+    <button type="button" class="close" aria-label="Close" (click)="onCancel()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form #f="ngForm">
+        <div class="form-group">
+            <label for="websitename">Website Name</label>
+            <input type="text" class="form-control" id="websitename" placeholder="website name"
+            [(ngModel)]="favorite.websiteName"
+            name="wbsiteNme"
+            required>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Url</label>
+            <input type="url" class="form-control" id="url" placeholder="http://url"
+            [(ngModel)]="favorite.url"
+            name="url"
+            appUrlValidator
+            required>
+        </div>
+        
+    </form>
+    
+</div>
+<div class="modal-footer">   
+    <button type="button" class="btn btn-outline-dark" (click)="onCancel()">Cancel</button>
+    <button type="button" class="btn btn-outline-dark" (click)="onAdd()" 
+    [disabled]="!f.valid">Add</button>
+</div>

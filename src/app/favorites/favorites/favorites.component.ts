@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { faPlus, faTable, faList, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute } from '@angular/router';
+import { NgbModal, NgbModule, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { AddDialogComponent } from '../dialogs/add-dialog/add-dialog.component';
+import { FavoritesService } from 'src/app/common/favorites/favorites.service';
 
 
 
@@ -9,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.css']
 })
-export class FavoritesComponent implements OnInit {
+export class FavoritesComponent{
 
   public faPlus = faPlus;
   public faList = faList;
@@ -22,19 +25,27 @@ export class FavoritesComponent implements OnInit {
   
   
   private _isGridView;
-
+  private ngbModalRef: NgbModalRef;
   
 
-  constructor(private activatedRoute:ActivatedRoute) {
+  constructor(private activatedRoute:ActivatedRoute,
+              private modalService: NgbModal,
+              private favoritesService: FavoritesService) {
     this.activatedRoute.url.subscribe( () =>  {
       this._isGridView = window.location.href.indexOf('grid') !== -1;
     });
 
   }
 
-
-
-  ngOnInit() {
+  public add(){
+    this.ngbModalRef = this.modalService.open(AddDialogComponent);
+    this.ngbModalRef.result.then(newFavorite => {
+      this.favoritesService.add(newFavorite)
+    }).catch( cancel =>{
+      console.log('dissmis add ')
+    })
   }
+
+
 
 }

@@ -70,6 +70,13 @@ export class FavoritesService {
     }
   }
 
+  public add(favorite:IFavorite){
+    favorite.id = this.nextId();
+    favorite.img = ''
+    this._favoritesList.push(favorite);
+    this.actiosLogService.add(favorite.websiteName, favorite.url);
+  }
+
   private  nextId(){
     let currentId = (this._nextId || 1) ;
     this._nextId = currentId + 1;
