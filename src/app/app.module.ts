@@ -11,8 +11,6 @@ import { FavoritesComponent } from './favorites/favorites/favorites.component';
 import { FavoritesGridComponent } from './favorites/favorites-grid/favorites-grid.component';
 import { FavoritesTilesComponent } from './favorites/favorites-tiles/favorites-tiles.component';
 import { ActionBtnsComponent } from './share/action-btns/action-btns.component';
-import { AddFavoritesComponent } from './favorites/add-favorites/add-favorites.component';
-import { RemoveFavoritesComponent } from './favorites/remove-favorites/remove-favorites.component';
 import { HoverSpyDirective } from './share/action-btns/hover-spy.directive';
 import { RemoveDialogComponent } from './fravorites/dialogs/remove-dialog/remove-dialog.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -29,8 +27,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     FavoritesGridComponent,
     FavoritesTilesComponent,
     ActionBtnsComponent,
-    AddFavoritesComponent,
-    RemoveFavoritesComponent,
     HoverSpyDirective,
     RemoveDialogComponent
   ],
