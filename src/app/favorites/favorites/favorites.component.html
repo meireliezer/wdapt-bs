@@ -5,7 +5,7 @@
         <div class="ml-auto d-flex">            
             <div class="search border rounded">
                 <fa-icon [icon]="faSearch" class="mx-1"></fa-icon>
-                <input type="text" class="border-0 h-100 "/>
+                <input type="text" class="border-0 h-100 " #search/>
             </div>
             <a class="btn border rounded mr-1" (click)="add()"><fa-icon [icon]="faPlus"></fa-icon></a>  
             <a *ngIf="isGridView" routerLink="/favorites/tiles" class="btn border rounded"><fa-icon [icon]="faTable "></fa-icon></a>  
